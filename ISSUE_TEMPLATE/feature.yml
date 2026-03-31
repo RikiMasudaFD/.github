@@ -1,0 +1,52 @@
+name: ✨ 機能追加・改善
+description: 新機能の追加や既存機能の改善を依頼する
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        新機能や改善のリクエストを記入してください。
+        スピード感を重視するため、必要最低限の情報を簡潔に記載してください。
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: ユーザーストーリー
+      description: 誰が・何をしたいか・なぜ必要かを記載してください
+      placeholder: |
+        **誰が:** （例: ユーザーが / 管理者が）
+        **何をしたい:** （例: ○○できるようにしたい）
+        **なぜ:** （例: △△のため）
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 受け入れ条件
+      description: この機能が完了したとみなす条件を箇条書きで記載してください
+      placeholder: |
+        - [ ] ○○ができる
+        - [ ] △△が表示される
+        - [ ] □□のエラーが発生しない
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      options:
+        - 🔴 高（今スプリントで対応必須）
+        - 🟡 中（次スプリントで対応）
+        - 🟢 低（余裕があれば対応）
+    validations:
+      required: true
+
+  - type: textarea
+    id: design
+    attributes:
+      label: 実装方針・備考
+      description: 実装のアイデアや参考情報、デザインのメモなどがあれば記載してください（任意）
+      placeholder: 参考URL、スクリーンショット、技術的な考慮事項など

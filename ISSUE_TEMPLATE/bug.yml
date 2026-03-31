@@ -1,0 +1,66 @@
+name: 🐛 バグ報告
+description: 不具合・バグを報告する
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグの詳細を記入してください。
+        再現性の確認に必要な情報を簡潔に記載してください。
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 発生している問題
+      description: 何が起きているか簡潔に説明してください
+      placeholder: 例：○○ボタンをクリックすると△△というエラーが表示される
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 再現手順
+      description: バグを再現するための手順を記載してください
+      placeholder: |
+        1. ○○ページを開く
+        2. △△を入力する
+        3. □□ボタンをクリックする
+        4. エラーが発生する
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期待する動作
+      description: 本来どのように動作すべきかを記載してください
+      placeholder: 例：○○が正常に完了し、△△画面に遷移する
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 深刻度
+      options:
+        - 🔴 致命的（サービス停止・データ損失）
+        - 🟡 高（主要機能が使えない）
+        - 🟢 中（一部機能に影響、回避策あり）
+        - ⚪ 低（軽微な表示崩れなど）
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 環境
+      description: 発生環境を記載してください
+      placeholder: "例: 本番 / ステージング / ローカル、ブラウザ: Chrome 120、OS: macOS 14"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 補足情報
+      description: スクリーンショット、ログ、その他の関連情報があれば貼り付けてください（任意）
